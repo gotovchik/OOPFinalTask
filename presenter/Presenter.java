@@ -15,7 +15,7 @@ public class Presenter {
     }
 
     public void start() {
-        System.out.println("Вас приветсвует приложение \"Мои контакты\"!");
+        System.out.println("Вас приветствует приложение \"Мои контакты\"!");
         Scanner in = new Scanner(System.in);
         while (true) {
             System.out.println("Выберите пункт меню: ");

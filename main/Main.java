@@ -19,6 +19,7 @@ import view.View;
 
 public class Main {
     public static void main(String[] args) {
+        
         //#region
         List<CounterAgent> counterAgents = new ArrayList<>();
         List<Contact> ivanContacts = new ArrayList<>();
@@ -34,6 +35,7 @@ public class Main {
         counterAgents.add(cleanWorld);
         counterAgents.add(ivan);
         //#endregion
+
         Presenter presenter = new Presenter(new View(), new Model(counterAgents));
         presenter.start();
     }
