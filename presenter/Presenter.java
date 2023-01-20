@@ -29,7 +29,7 @@ public class Presenter {
             int choice = in.nextInt();
             switch(choice) {
                 case(1):
-                    //TODO
+                    view.showCounterAgents(model.getCounterAgents());
                     break;
                 case(2):
                     //TODO
