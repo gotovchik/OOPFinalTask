@@ -26,7 +26,7 @@ public class Main {
         ivanContacts.add(new Phone("9114062531"));
         ivanContacts.add(new Telegram("vanya_tg"));
         ivanContacts.add(new Email("vanya1996@mail.ru"));
-        Person ivan = new Person("Иван", LocalDate.of(1996, 10, 12), ivanContacts);
+        Person ivan = new Person("Ivan", LocalDate.of(1996, 10, 12), ivanContacts);
         List<Contact> cleaningContacts = new ArrayList<>();
         cleaningContacts.add(new Address("г. Петрозаводск, ул. Володарского, д. 16"));
         cleaningContacts.add(new Vkontakte("cleanworld"));

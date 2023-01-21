@@ -14,6 +14,4 @@ public class CounterAgent {
     public List<Contact> getContacts() {
         return contacts;
     }
-
-    
 }

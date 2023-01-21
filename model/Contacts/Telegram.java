@@ -17,7 +17,7 @@ public class Telegram implements Contact {
 
     @Override
     public String toString() {
-        return "Telegram id:  " + id;
+        return "Telegram id: " + id;
     }
 
     

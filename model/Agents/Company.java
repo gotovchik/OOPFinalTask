@@ -14,17 +14,13 @@ public class Company extends CounterAgent {
         this.tin = tin;
         this.contacts = contacts;
     }
-
-    public String getName() {
-        return name;
-    }
-
     public int getTin() {
         return tin;
     }
-
-    public List<Contact> getContacts() {
-        return contacts;
+    
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override

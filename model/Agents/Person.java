@@ -16,16 +16,13 @@ public class Person extends CounterAgent {
         this.contacts = contacts;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public LocalDate getBirthday() {
         return birthday;
     }
-
-    public List<Contact> getContacts() {
-        return contacts;
+    
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override

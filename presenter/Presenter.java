@@ -15,43 +15,37 @@ public class Presenter {
     }
 
     public void start() {
-        System.out.println("Вас приветствует приложение \"Мои контакты\"!");
+        view.greeting();
         Scanner in = new Scanner(System.in);
         while (true) {
-            System.out.println("Выберите пункт меню: ");
-            System.out.println("  [1 + Enter] - Посмотреть список всех контактов");
-            System.out.println("  [2 + Enter] - Найти контакт");
-            System.out.println("  [3 + Enter] - Добавить контакт");
-            System.out.println("  [4 + Enter] - Удалить контакт");
-            System.out.println("  [5 + Enter] - Добавить новый способ связи с контактом");
-            System.out.println("  [6 + Enter] - Удалить способ связи с контактом");
-            System.out.println("  [0 + Enter] - Выход из приложения");
+            view.showMenu();
             int choice = in.nextInt();
-            switch(choice) {
-                case(1):
+            switch (choice) {
+                case (1):
                     view.showCounterAgents(model.getCounterAgents());
                     break;
-                case(2):
-                    //TODO
+                case (2):
+                    System.out.println("Введите имя контакта/название организации для поиска:");
+                    String name = in.next();
+                    view.showCounterAgents(model.findAgentByName(name));
                     break;
-                case(3):
-                    //TODO
+                case (3):
+                    // TODO
                     break;
-                case(4):
-                    //TODO
+                case (4):
+                    // TODO
                     break;
-                case(5):
-                    //TODO
+                case (5):
+                    // TODO
                     break;
-                case(6):
-                    //TODO
+                case (6):
+                    // TODO
                     break;
-                case(0):
+                case (0):
                     System.out.println("Спасибо, что воспользовались приложением \"Мои контакты\".\n Всего доброго!");
                     in.close();
                     return;
             }
         }
     }
-    
 }
