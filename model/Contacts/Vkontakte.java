@@ -20,5 +20,4 @@ public class Vkontakte implements Contact {
         return "vk.com/" + id;
     }
 
-    
 }

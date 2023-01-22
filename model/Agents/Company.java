@@ -6,18 +6,17 @@ import model.Contacts.Contact;
 
 public class Company extends CounterAgent {
     private String name;
-    private int tin;
     private List<Contact> contacts;
 
-    public Company(String name, int tin, List<Contact> contacts) {
+    public Company(String name, List<Contact> contacts) {
         this.name = name;
-        this.tin = tin;
         this.contacts = contacts;
     }
-    public int getTin() {
-        return tin;
+
+    public Company(String name) {
+        this.name = name;
     }
-    
+
     @Override
     public String getName() {
         return name;
@@ -26,11 +25,15 @@ public class Company extends CounterAgent {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Название организации: " + name + " | ИНН: " + tin + "\n");
+        sb.append("Название организации: " + name + "\n");
         for (Contact contact : contacts) {
             sb.append("  " + contact.toString() + "\n");
         }
         return sb.toString();
+    }
+
+    public void setContacts(List<Contact> contacts) {
+        this.contacts = contacts;
     }
 
 }

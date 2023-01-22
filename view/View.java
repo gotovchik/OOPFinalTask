@@ -32,6 +32,12 @@ public class View {
     }
 
     public void goodBye() {
-        System.out.println("Спасибо, что воспользовались приложением \"Мои контакты\".\n Всего доброго!");
+        System.out.println("Спасибо, что воспользовались приложением \"Мои контакты\".\nВсего доброго!");
+    }
+
+    public void addContactMenu () {
+        System.out.println("Выберите тип контакта:" );
+        System.out.println("  [1 + Enter] - Физическое лицо");
+        System.out.println("  [2 + Enter] - Юридическое лицо");
     }
 }

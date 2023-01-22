@@ -20,5 +20,4 @@ public class Telegram implements Contact {
         return "Telegram id: " + id;
     }
 
-    
 }

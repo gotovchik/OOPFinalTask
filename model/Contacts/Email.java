@@ -2,7 +2,7 @@ package model.Contacts;
 
 public class Email implements Contact {
     private String email;
-    
+
     public Email(String email) {
         this.email = email;
     }
@@ -19,6 +19,5 @@ public class Email implements Contact {
     public String toString() {
         return "Email: " + email;
     }
-    
-    
+
 }

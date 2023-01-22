@@ -20,7 +20,4 @@ public class Phone implements Contact {
         return "Телефон: " + phoneNumber;
     }
 
-    
-    
-    
 }

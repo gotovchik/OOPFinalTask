@@ -17,10 +17,7 @@ public class Address implements Contact {
 
     @Override
     public String toString() {
-        return "Адрес: "+ address;
+        return "Адрес: " + address;
     }
 
-    
-
-    
 }

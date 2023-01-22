@@ -20,8 +20,8 @@ public class Presenter {
         boolean flag = true;
         while (flag) {
             view.showMenu();
-            int choice = in.nextInt();
-            switch (choice) {
+            int menuChoice = in.nextInt();
+            switch (menuChoice) {
                 case (1):
                     view.showCounterAgents(model.getCounterAgents());
                     break;
@@ -31,7 +31,12 @@ public class Presenter {
                     view.showCounterAgents(model.findAgentByName(name));
                     break;
                 case (3):
-                    // TODO
+                    view.addContactMenu();
+                    int addMenuChoise = in.nextInt();
+                    System.out.println("Введите наименование нового контакта:");
+                    String newName = in.next();
+                    model.addContact(addMenuChoise, newName);
+                    System.out.println("Контакт успешно добавлен");
                     break;
                 case (4):
                     // TODO
@@ -45,7 +50,7 @@ public class Presenter {
                 case (0):
                     view.goodBye();
                     flag = false;
-            }        
+            }
         }
         in.close();
     }
