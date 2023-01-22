@@ -5,7 +5,7 @@ import java.util.List;
 import model.Agents.CounterAgent;
 
 public class View {
-    public void showCounterAgents(List<CounterAgent> counterAgents) {
+    public void showCounterAgent(List<CounterAgent> counterAgents) {
         if (counterAgents.isEmpty()) {
             System.out.println("Список пуст/контактов по запросу не найдено.");
         } else {
@@ -14,6 +14,19 @@ public class View {
                 System.out.println("--------------------------------");
             }
         }
+    }
+
+    public void showAllContacts(List<CounterAgent> counterAgents) {
+        System.out.println("--------------------------------");
+        if (counterAgents.isEmpty()) {
+            System.out.println("Список пуст/контактов по запросу не найдено.");
+        } else {
+            for (CounterAgent counterAgent : counterAgents) {
+                System.out.println(counterAgent.getName());
+                System.out.println("--------------------------------");
+            }
+        }
+
     }
 
     public void showMenu() {
@@ -35,9 +48,10 @@ public class View {
         System.out.println("Спасибо, что воспользовались приложением \"Мои контакты\".\nВсего доброго!");
     }
 
-    public void addContactMenu () {
-        System.out.println("Выберите тип контакта:" );
+    public void addContactMenu() {
+        System.out.println("Выберите тип контакта:");
         System.out.println("  [1 + Enter] - Физическое лицо");
         System.out.println("  [2 + Enter] - Юридическое лицо");
     }
+
 }

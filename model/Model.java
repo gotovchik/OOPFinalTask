@@ -36,4 +36,14 @@ public class Model {
             counterAgents.add(new Company(name));
         }
     }
+
+    public void removeContact(String name) {
+        List<CounterAgent> removeList = new ArrayList<>();
+        for (CounterAgent counterAgent : counterAgents) {
+            if (counterAgent.getName().equalsIgnoreCase(name)) {
+                removeList.add(counterAgent);
+            }
+        }
+        counterAgents.removeAll(removeList);
+    }
 }

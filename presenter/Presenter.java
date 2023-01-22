@@ -23,12 +23,12 @@ public class Presenter {
             int menuChoice = in.nextInt();
             switch (menuChoice) {
                 case (1):
-                    view.showCounterAgents(model.getCounterAgents());
+                    view.showAllContacts(model.getCounterAgents());
                     break;
                 case (2):
                     System.out.println("Введите имя контакта/название организации для поиска:");
                     String name = in.next();
-                    view.showCounterAgents(model.findAgentByName(name));
+                    view.showCounterAgent(model.findAgentByName(name));
                     break;
                 case (3):
                     view.addContactMenu();
@@ -39,7 +39,10 @@ public class Presenter {
                     System.out.println("Контакт успешно добавлен");
                     break;
                 case (4):
-                    // TODO
+                    System.out.println("Введите имя контакта, который хотите удалить:");
+                    String removeName = in.next();
+                    model.removeContact(removeName);
+                    System.out.println("Контакт удален!");
                     break;
                 case (5):
                     // TODO

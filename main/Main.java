@@ -30,7 +30,7 @@ public class Main {
         cleaningContacts.add(new Address("г. Петрозаводск, ул. Володарского, д. 16"));
         cleaningContacts.add(new Vkontakte("cleanworld"));
         cleaningContacts.add(new Phone("771926"));
-        Company cleanWorld = new Company("Чистый мир", cleaningContacts);
+        Company cleanWorld = new Company("CleanWorld", cleaningContacts);
         counterAgents.add(cleanWorld);
         counterAgents.add(ivan);
         // #endregion
