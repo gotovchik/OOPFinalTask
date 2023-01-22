@@ -11,6 +11,7 @@ public class View {
         } else {
             for (CounterAgent CounterAgent : counterAgents) {
                 System.out.println(CounterAgent.toString());
+                System.out.println("--------------------------------");
             }
         }
     }
@@ -28,5 +29,9 @@ public class View {
 
     public void greeting() {
         System.out.println("Вас приветствует приложение \"Мои контакты\"!");
+    }
+
+    public void goodBye() {
+        System.out.println("Спасибо, что воспользовались приложением \"Мои контакты\".\n Всего доброго!");
     }
 }

@@ -17,7 +17,8 @@ public class Presenter {
     public void start() {
         view.greeting();
         Scanner in = new Scanner(System.in);
-        while (true) {
+        boolean flag = true;
+        while (flag) {
             view.showMenu();
             int choice = in.nextInt();
             switch (choice) {
@@ -42,10 +43,10 @@ public class Presenter {
                     // TODO
                     break;
                 case (0):
-                    System.out.println("Спасибо, что воспользовались приложением \"Мои контакты\".\n Всего доброго!");
-                    in.close();
-                    return;
-            }
+                    view.goodBye();
+                    flag = false;
+            }        
         }
+        in.close();
     }
 }
