@@ -31,12 +31,12 @@ public class Presenter {
                     view.showCounterAgent(model.findAgentByName(name));
                     break;
                 case (3):
-                    view.addContactMenu();
-                    int addMenuChoise = in.nextInt();
+                    view.addAgentMenu();
+                    int addAgentMenuChoise = in.nextInt();
                     System.out.println("Введите наименование нового контакта:");
                     String newName = in.next();
-                    model.addContact(addMenuChoise, newName);
-                    System.out.println("Контакт успешно добавлен");
+                    model.addAgent(addAgentMenuChoise, newName, view.addContactMenu(in));
+                    System.out.println("Контакт успешно добавлен!");
                     break;
                 case (4):
                     System.out.println("Введите имя контакта, который хотите удалить:");
@@ -45,8 +45,8 @@ public class Presenter {
                     System.out.println("Контакт удален!");
                     break;
                 case (5):
-                    // TODO
-                    break;
+                    model.addNewContact(view.addContactName(in), view.addContactMenu(in));
+                    System.out.println("Способ связи успешно добавлен!");
                 case (6):
                     // TODO
                     break;

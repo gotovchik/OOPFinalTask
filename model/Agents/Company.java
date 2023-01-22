@@ -13,10 +13,6 @@ public class Company extends CounterAgent {
         this.contacts = contacts;
     }
 
-    public Company(String name) {
-        this.name = name;
-    }
-
     @Override
     public String getName() {
         return name;
@@ -36,4 +32,8 @@ public class Company extends CounterAgent {
         this.contacts = contacts;
     }
 
+    @Override
+    public void addContact(Contact contact) {
+        this.addContact(contact);
+    }
 }

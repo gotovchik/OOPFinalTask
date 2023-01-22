@@ -1,8 +1,15 @@
 package view;
 
 import java.util.List;
+import java.util.Scanner;
 
 import model.Agents.CounterAgent;
+import model.Contacts.Address;
+import model.Contacts.Contact;
+import model.Contacts.Email;
+import model.Contacts.Phone;
+import model.Contacts.Telegram;
+import model.Contacts.Vkontakte;
 
 public class View {
     public void showCounterAgent(List<CounterAgent> counterAgents) {
@@ -48,10 +55,58 @@ public class View {
         System.out.println("Спасибо, что воспользовались приложением \"Мои контакты\".\nВсего доброго!");
     }
 
-    public void addContactMenu() {
+    public void addAgentMenu() {
         System.out.println("Выберите тип контакта:");
         System.out.println("  [1 + Enter] - Физическое лицо");
         System.out.println("  [2 + Enter] - Юридическое лицо");
     }
+
+    public Contact addContactMenu(Scanner sc) {
+        System.out.println("Выберите тип способа связи:");
+        System.out.println("  [1 + Enter] - Телефон");
+        System.out.println("  [2 + Enter] - Email");
+        System.out.println("  [3 + Enter] - VK");
+        System.out.println("  [4 + Enter] - Telegram");
+        System.out.println("  [5 + Enter] - Адрес");
+        int addContactMenuChoice = sc.nextInt();
+        String value = "";
+        Contact contact = null;
+        switch (addContactMenuChoice) {
+            case 1:
+                System.out.println("Введите номер телефона:");
+                value = sc.next();
+                contact = new Phone(value); 
+                break;
+            case 2:
+                System.out.println("Введите адрес Email:");
+                value = sc.next();
+                contact = new Email(value);
+                break;
+            case 3:
+                System.out.println("Введите id VK:");
+                value = sc.next();
+                contact = new Vkontakte(value);
+                break;
+            case 4:
+                System.out.println("Введите id Telegram:");
+                value = sc.next();
+                contact = new Telegram(value);
+                break;
+            case 5:
+                System.out.println("Введите адрес:");
+                value = sc.next();
+                contact = new Address(value);
+                break;
+        }
+        return contact;
+   
+    }
+
+    public String addContactName(Scanner sc) {
+        System.out.println("Введите имя контакта, которому нужно добавить способ связи:");
+        String addContactName = sc.next();
+        return addContactName;
+    }
+
 
 }

@@ -1,21 +1,17 @@
 package model.Agents;
 
+
 import java.util.List;
 
 import model.Contacts.Contact;
 
 public class Person extends CounterAgent {
     private String name;
-
     private List<Contact> contacts;
 
     public Person(String name, List<Contact> contacts) {
         this.name = name;
         this.contacts = contacts;
-    }
-
-    public Person(String name) {
-        this.name = name;
     }
 
     @Override
@@ -37,6 +33,11 @@ public class Person extends CounterAgent {
 
     public void setContacts(List<Contact> contacts) {
         this.contacts = contacts;
+    }
+
+    @Override
+    public void addContact(Contact contact) {
+        this.contacts.add(contact);
     }
 
 }

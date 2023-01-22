@@ -6,6 +6,7 @@ import java.util.List;
 import model.Agents.Company;
 import model.Agents.CounterAgent;
 import model.Agents.Person;
+import model.Contacts.Contact;
 
 public class Model {
     private List<CounterAgent> counterAgents;
@@ -28,22 +29,23 @@ public class Model {
         return foundAgents;
     }
 
-    public void addContact(int choise, String name) {
+    public void addAgent(int choise, String name, Contact contact) {
+        List<Contact> contacts = new ArrayList<>();
+        contacts.add(contact);
         if (choise == 1) {
-            counterAgents.add(new Person(name));
-        }
-        else if (choise == 2) {
-            counterAgents.add(new Company(name));
+            counterAgents.add(new Person(name, contacts));
+        } else if (choise == 2) {
+            counterAgents.add(new Company(name, contacts));
         }
     }
 
     public void removeContact(String name) {
-        List<CounterAgent> removeList = new ArrayList<>();
-        for (CounterAgent counterAgent : counterAgents) {
-            if (counterAgent.getName().equalsIgnoreCase(name)) {
-                removeList.add(counterAgent);
-            }
+        counterAgents.removeAll(findAgentByName(name));
+    }
+
+    public void addNewContact(String name, Contact contact) {
+        for (CounterAgent counterAgent : findAgentByName(name)) {
+            counterAgent.addContact(contact);
         }
-        counterAgents.removeAll(removeList);
     }
 }
