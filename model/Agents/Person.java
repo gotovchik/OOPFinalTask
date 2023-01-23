@@ -8,4 +8,5 @@ public class Person extends CounterAgent {
     public Person(String name, List<Contact> contacts) {
         super(name, contacts);
     }
+    
 }

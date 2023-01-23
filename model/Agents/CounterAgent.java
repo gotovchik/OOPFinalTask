@@ -5,8 +5,8 @@ import java.util.List;
 import model.Contacts.Contact;
 
 public class CounterAgent {
-    private String name;
-    private List<Contact> contacts;
+    protected String name;
+    protected List<Contact> contacts;
 
     public String getName() {
         return name;

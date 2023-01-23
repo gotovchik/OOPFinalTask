@@ -47,6 +47,7 @@ public class Presenter {
                 case (5):
                     model.addNewContact(view.getContactName(in), view.contactMenu(in));
                     System.out.println("Способ связи успешно добавлен!");
+                    break;
                 case (6):
                     model.removeContact(view.getContactName(in), view.getContactValue(in));
                     System.out.println("Способ связи успешно удален!");
