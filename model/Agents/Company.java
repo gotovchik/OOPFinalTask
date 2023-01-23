@@ -10,7 +10,6 @@ public class Company extends CounterAgent {
 
     public Company(String name, List<Contact> contacts) {
         super(name, contacts);
-        // TODO Auto-generated constructor stub
     }
 
     @Override
