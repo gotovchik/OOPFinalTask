@@ -35,20 +35,21 @@ public class Presenter {
                     int addAgentMenuChoise = in.nextInt();
                     System.out.println("Введите наименование нового контакта:");
                     String newName = in.next();
-                    model.addAgent(addAgentMenuChoise, newName, view.addContactMenu(in));
+                    model.addAgent(addAgentMenuChoise, newName, view.contactMenu(in));
                     System.out.println("Контакт успешно добавлен!");
                     break;
                 case (4):
                     System.out.println("Введите имя контакта, который хотите удалить:");
                     String removeName = in.next();
-                    model.removeContact(removeName);
+                    model.removeAgent(removeName);
                     System.out.println("Контакт удален!");
                     break;
                 case (5):
-                    model.addNewContact(view.addContactName(in), view.addContactMenu(in));
+                    model.addNewContact(view.getContactName(in), view.contactMenu(in));
                     System.out.println("Способ связи успешно добавлен!");
                 case (6):
-                    // TODO
+                    model.removeContact(view.getContactName(in), view.getContactValue(in));
+                    System.out.println("Способ связи успешно удален!");
                     break;
                 case (0):
                     view.goodBye();

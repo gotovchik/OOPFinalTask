@@ -1,23 +1,20 @@
 package model.Contacts;
 
 public class Address implements Contact {
-    private String address;
+    private String name;
 
-    public Address(String address) {
-        this.address = address;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public Address(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
-        return "Адрес: " + address;
+        return "Адрес: " + name;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
 }

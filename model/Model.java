@@ -39,7 +39,7 @@ public class Model {
         }
     }
 
-    public void removeContact(String name) {
+    public void removeAgent(String name) {
         counterAgents.removeAll(findAgentByName(name));
     }
 
@@ -47,5 +47,20 @@ public class Model {
         for (CounterAgent counterAgent : findAgentByName(name)) {
             counterAgent.addContact(contact);
         }
+    }
+
+    public void removeContact(String name, String value) {
+
+        for (CounterAgent counterAgent : findAgentByName(name)) {
+            Contact contactForRemove = null;
+            for (Contact contact : counterAgent.getContacts()) {
+                if (contact.getName().equalsIgnoreCase(value)) {
+                    contactForRemove = contact;
+                    break;
+                } 
+            }
+            counterAgent.getContacts().remove(contactForRemove);
+        }
+
     }
 }

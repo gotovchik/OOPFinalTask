@@ -1,23 +1,20 @@
 package model.Contacts;
 
 public class Email implements Contact {
-    private String email;
+    private String name;
 
-    public Email(String email) {
-        this.email = email;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public Email(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
-        return "Email: " + email;
+        return "Email: " + name;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
 }

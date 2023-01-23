@@ -1,23 +1,20 @@
 package model.Contacts;
 
 public class Telegram implements Contact {
-    private String id;
+    private String name;
 
-    public Telegram(String id) {
-        this.id = id;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+    public Telegram(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
-        return "Telegram id: " + id;
+        return "Telegram name: " + name;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
 }
