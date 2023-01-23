@@ -11,6 +11,11 @@ public class CounterAgent {
     public String getName() {
         return name;
     }
+    
+    public CounterAgent(String name, List<Contact> contacts) {
+        this.name = name;
+        this.contacts = contacts;
+    }
 
     public List<Contact> getContacts() {
         return contacts;
@@ -18,5 +23,20 @@ public class CounterAgent {
 
     public void addContact(Contact contact) {
         contacts.add(contact);
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Имя: " + name + "\n");
+        if (contacts != null) {
+            for (Contact contact : contacts) {
+                sb.append("  " + contact.toString() + "\n");
+            }
+        }
+        return sb.toString();
+    }
+
+    public void setContacts(List<Contact> contacts) {
+        this.contacts = contacts;
     }
 }

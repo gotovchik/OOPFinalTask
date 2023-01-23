@@ -9,13 +9,8 @@ public class Company extends CounterAgent {
     private List<Contact> contacts;
 
     public Company(String name, List<Contact> contacts) {
-        this.name = name;
-        this.contacts = contacts;
-    }
-
-    @Override
-    public String getName() {
-        return name;
+        super(name, contacts);
+        // TODO Auto-generated constructor stub
     }
 
     @Override
@@ -26,14 +21,5 @@ public class Company extends CounterAgent {
             sb.append("  " + contact.toString() + "\n");
         }
         return sb.toString();
-    }
-
-    public void setContacts(List<Contact> contacts) {
-        this.contacts = contacts;
-    }
-
-    @Override
-    public void addContact(Contact contact) {
-        this.addContact(contact);
     }
 }
