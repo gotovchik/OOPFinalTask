@@ -1,23 +1,20 @@
 package model.Contacts;
 
 public class Phone implements Contact {
-    private String phoneNumber;
+    private String name;
 
-    public Phone(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public Phone(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
-        return "Телефон: " + phoneNumber;
+        return "Телефон: " + name;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
 }

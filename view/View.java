@@ -12,6 +12,15 @@ import model.Contacts.Telegram;
 import model.Contacts.Vkontakte;
 
 public class View {
+    private void showContactMenu() {
+        System.out.println("Выберите тип способа связи:");
+        System.out.println("  [1 + Enter] - Телефон");
+        System.out.println("  [2 + Enter] - Email");
+        System.out.println("  [3 + Enter] - VK");
+        System.out.println("  [4 + Enter] - Telegram");
+        System.out.println("  [5 + Enter] - Адрес");
+    }
+
     public void showCounterAgent(List<CounterAgent> counterAgents) {
         if (counterAgents.isEmpty()) {
             System.out.println("Список пуст/контактов по запросу не найдено.");
@@ -61,13 +70,8 @@ public class View {
         System.out.println("  [2 + Enter] - Юридическое лицо");
     }
 
-    public Contact addContactMenu(Scanner sc) {
-        System.out.println("Выберите тип способа связи:");
-        System.out.println("  [1 + Enter] - Телефон");
-        System.out.println("  [2 + Enter] - Email");
-        System.out.println("  [3 + Enter] - VK");
-        System.out.println("  [4 + Enter] - Telegram");
-        System.out.println("  [5 + Enter] - Адрес");
+    public Contact contactMenu(Scanner sc) {
+        showContactMenu();
         int addContactMenuChoice = sc.nextInt();
         String value = "";
         Contact contact = null;
@@ -75,7 +79,7 @@ public class View {
             case 1:
                 System.out.println("Введите номер телефона:");
                 value = sc.next();
-                contact = new Phone(value); 
+                contact = new Phone(value);
                 break;
             case 2:
                 System.out.println("Введите адрес Email:");
@@ -99,14 +103,17 @@ public class View {
                 break;
         }
         return contact;
-   
+
     }
 
-    public String addContactName(Scanner sc) {
-        System.out.println("Введите имя контакта, которому нужно добавить способ связи:");
-        String addContactName = sc.next();
-        return addContactName;
+    public String getContactName(Scanner sc) {
+        System.out.println("Введите имя контакта, которому нужно добавить/удалить способ связи:");
+        String getContactName = sc.next();
+        return getContactName;
     }
 
-
+    public String getContactValue(Scanner sc) {
+        System.out.println("Введите номер телефона/адрес/vk/tg/email, который хотете удалить: ");
+        return sc.next();
+    }
 }

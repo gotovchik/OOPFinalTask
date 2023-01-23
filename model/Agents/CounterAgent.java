@@ -11,7 +11,7 @@ public class CounterAgent {
     public String getName() {
         return name;
     }
-    
+
     public CounterAgent(String name, List<Contact> contacts) {
         this.name = name;
         this.contacts = contacts;
@@ -39,4 +39,5 @@ public class CounterAgent {
     public void setContacts(List<Contact> contacts) {
         this.contacts = contacts;
     }
+
 }
